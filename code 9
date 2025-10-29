@@ -1,0 +1,48 @@
+# Define the Patient class
+class Patient:
+    #_init_ is the constructor method. It runs whenever we create a new Patient object.
+    def __init__(self, name, age, gender, blood_pressure, temperature):
+        # "self" refers to the current object being created.
+        # We attach the provided values to the object using self.attribuute_name = value
+        self.name = name
+        self.age = age
+        self.gender = gender
+        self.blood_pressure = blood_pressure
+        self.temperature = temperature
+        
+    # Method to display patient info in a clean format
+    def display_patient_info (self):
+        # Use f-string to format multiple lines of text
+        return (
+            f"Name: {self.name}\n"
+            f"Age: {self.age}\n"
+            f"Gender: {self.gender}\n"
+            f"Blood Pressure: {self.blood_pressure}\n"
+            f"Temperature: {self. temperature}"
+            )
+    
+    # Method to check if the patient is hypertensive
+    def is_hypertensive(self):
+        # Unpack the systolic and diastolic values from the tuple
+        sys, dia = self.blood_pressure
+        # Return True if systolic >= 140 OR diastolic >=90
+        return sys >= 140 or dia >= 90
+    
+    # Method to check if the patient has a fever
+    def is_feverish(self):
+        # Return True if the temperature is >= 37.5
+        return self.temperature >= 37.5
+    
+    # Create two Patient objects (instances of the Patient class)
+    # Each object will have its own attributes and can use the methods defined in the class
+    
+patient1 = Patient("John Doe", 45, "Male", (140, 85), 36.8)
+patient2 = Patient("Jane Smith", 32, "Female", (130, 88), 37.6)
+    
+# Display the information of Patient 1 
+print("Patient 1 Information:")
+print(patient1.display_patient_info(), end="\n\n")
+    
+# Display the information of Patient 2
+print("Patient 2 Information:")
+print(patient2. display_patient_info(), end="\n\n")
